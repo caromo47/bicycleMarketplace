@@ -1,0 +1,38 @@
+<div class="create">
+	<h3>Create Listing</h3>
+	<div class="createbike">
+		<form (submit)="addBike()" #bikeForm="ngForm">
+			<div class="title">
+				<h4>Title: <input type="text" name="title" required minlength="2" maxlength="25" [(ngModel)]="newBike.title" #title="ngModel"></h4>
+				<p>Image: <input type="text" name="image" required [(ngModel)]="newBike.image" #image="ngModel"></p>
+				<p>Description: <textarea name="description" required maxlength="200" [(ngModel)]="newBike.description" rows="8" cols="80" #description="ngModel"></textarea></p>
+			</div>
+			<div class="price">
+				<h5>Price: <input type="number" name="price" required [(ngModel)]="newBike.price" minValue="1" #price="ngModel"></h5>
+				<h5>Location: <input type="text" name="location" required [(ngModel)]="newBike.location" #location="ngModel"></h5>
+				<button type="submit" id="createbutton" [disabled]="!bikeForm.valid">Create</button>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="edit">
+	<h3>Edit/Delete Listings</h3>
+	<div class="bikes" *ngFor="let bike of myBikes"; let idx= "index">
+		<form (submit)="updateBike(idx)" #bikeForm="ngForm">
+			<div class="image">
+				<img src="{{bike.image}}">
+			</div>
+			<div class="title">
+				<h4>Title: <input type="text" name="title" [(ngModel)]="bike.title" #title="ngModel" required></h4>
+				<p>Description: <textarea rows="3" name="desc" [(ngModel)]="bike.description" #description="ngModel" required maxlength="200"></textarea></p>
+			</div>
+			<div class="price">
+				<h4>Price: <input type="number" name="price" [(ngModel)]="bike.price" #price="ngModel" required minValue="1"></h4>
+				<h4>Location: <input type="text" name="location" [(ngModel)]="bike.location" #location="ngModel" required></h4>
+				<button type="submit" name="update" [disabled]="!bikeForm.form.valid">Update</button>
+				<button class="delete" (click)="deleteBike(idx)">Delete</button>
+			</div>
+		</form>
+		{{myBikes | json}}
+	</div>
+</div>

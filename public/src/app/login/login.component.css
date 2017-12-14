@@ -1,0 +1,64 @@
+
+h3{
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+}
+.bike{
+	border: 2px solid black;
+	background: silver;
+	width: 60%;
+	text-align: center;
+	margin: auto;
+
+}
+.bikeimage{
+	display: inline-block;
+	width: 20%;
+}
+.bikewords{
+	display: inline-block;
+	width: 40%;
+}
+.price{
+	display: inline-block;
+	width: 20%;
+}
+.login{
+	width: 20%;
+	border: 2px solid black;
+	display: inline-block;
+	vertical-align: top;
+	margin: 3%;
+	height: 100px;
+	padding: 50px 0px 30px 50px;
+	text-align: left;
+	border-radius: 5px;
+}
+.registration{
+	width: 25%;
+	border: 2px solid black;
+	display: inline-block;
+	vertical-align: top;
+	margin: 3%;
+	border-radius: 5px;
+	padding: 20px 0px 10px 60px;
+	text-align: left;
+}
+#buttonreg{
+	width: 100%;
+	padding: 10px;
+	background: black;
+	color: white;
+	border-radius: 5px;
+}
+#buttonlog{
+	width: 100%;
+	padding: 5px;
+	background: black;
+	color: white;
+	border-radius: 5px;
+}
+.errors{
+	color: red;
+}

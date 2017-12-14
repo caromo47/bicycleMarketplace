@@ -1,0 +1,8 @@
+<div class="bikes" *ngFor="let bikes of allBikes">
+	<img src="bikes.image">
+	<h2>{{bikes.title}}</h2>
+	<h2>{{bikes.description}}</h2>
+	<h2>{{bikes.price | currency:USD:true}}</h2>
+	<h2>{{bikes.location}}</h2>
+	<button (click)="deleteBike(bikes)">Delete</button>
+</div>
